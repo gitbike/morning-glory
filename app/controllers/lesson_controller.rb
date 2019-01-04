@@ -52,7 +52,28 @@ class LessonController < ApplicationController
     @surface = 141.31
   end
 
+  def step13
+    @time = Time.now
+  end
+
+  def step14
+    @population = 127767944
+  end
+
+  def step15
+    @message = "ご機嫌いかが？\nRailsの勉強を頑張りましょう。 "
+  end
+
+  def step18
+    @zaiko = 10
+  end
+
+  def step19
+    @items = { 'フライパン': 2000, 'ワイングラス': 600, 'ペッパーミル': 4000, 'ビーラー': 900 }
+  end
+
   private
+
   def set_message
     @message = 'こんにちは'
   end
