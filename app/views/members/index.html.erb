@@ -12,9 +12,11 @@
     <% @members.each do |member| %>
     <tr>
       <td style="text-align: right"><%= member.number %></td>
-      <td><%= member.name %></td>
+      <td><%= link_to member.name, member %></td>
       <td><%= member.full_name %></td>
-      <td></td>
+      <td><%= link_to '編集', [:edit, member] %>|
+          <%= link_to '削除', member, method: :delete, data: { confirm: '本当に削除しますか？' } %>
+      </td>
     </tr>
     <% end %>
   </table>
