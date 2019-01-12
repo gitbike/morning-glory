@@ -3,8 +3,9 @@ class MembersController < ApplicationController
     @members = Member.order('number')
   end
 
+  # 会員情報の詳細
   def show
-    
+    @member = Member.find(params[:id])
   end
 
   def new
