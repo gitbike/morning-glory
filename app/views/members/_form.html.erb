@@ -21,7 +21,7 @@
   </tr>
   <tr>
     <th><%= f.label :birthday, '誕生日', for: 'member_birthday_1i' %></th>
-    <td><%= f.date_select :birthday, start_year: 1940, end_year: Time.now.year, use_month_numbers: true %></td>
+    <td><%= add_date_unit(f.date_select :birthday, start_year: 1940, end_year: Time.now.year, use_month_numbers: true) %></td>
   </tr>
   <tr>
     <th><%= f.label :email, 'メールアドレス' %></th>
@@ -32,12 +32,6 @@
     <td>
       <%= f.check_box :administrator %>
       <%= f.label :administrator, '管理者' %>
-    </td>
-  </tr>
-  <tr>
-    <th>hogehoge</th>
-    <td>
-      <%= f.text_area %>
     </td>
   </tr>
 </table>
