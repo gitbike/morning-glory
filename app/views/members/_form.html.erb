@@ -20,6 +20,7 @@
     </td>
   </tr>
   <tr>
+    <%# 一つ目のドロップダウンにタグ付けするため、第2引数にforオプションを使っている %>
     <th><%= f.label :birthday, '誕生日', for: 'member_birthday_1i' %></th>
     <td><%= add_date_unit(f.date_select :birthday, start_year: 1940, end_year: Time.now.year, use_month_numbers: true) %></td>
   </tr>
@@ -34,4 +35,5 @@
       <%= f.label :administrator, '管理者' %>
     </td>
   </tr>
+  <%= f.file_field :name %>
 </table>
