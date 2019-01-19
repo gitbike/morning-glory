@@ -9,6 +9,7 @@ class CreateMembers < ActiveRecord::Migration[5.1]
       t.integer :gender, null: false, default: 0  # 性別（0:男 1:女）
       t.boolean :administrator, null: false, default: false  # 管理者権限
       t.timestamps null: false
+      t.boolean :deleted, null: false, default: false
     end
   end
 end
