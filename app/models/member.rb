@@ -9,4 +9,9 @@ class Member < ApplicationRecord
       rel
     end
   end
+
+  def destroy
+    self.deleted = true
+    save
+  end
 end
