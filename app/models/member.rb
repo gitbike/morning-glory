@@ -1,4 +1,6 @@
 class Member < ApplicationRecord
+  scope :active, -> { where(deleted: false) }
+
   class << self
     def search(query)
       # クラス内ではレシーバを省略できる
