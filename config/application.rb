@@ -12,6 +12,9 @@ module Asagao
     config.load_defaults 5.1
     config.time_zone = 'Tokyo'
 
+    # 学習のため、ストロングパラメータを無効化する(あとで必ず有効化すること)
+    config.action_controller.permit_all_parameters = true
+
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
