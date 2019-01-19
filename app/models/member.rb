@@ -1,4 +1,6 @@
 class Member < ApplicationRecord
+  scope :active, -> { where(deleted: false) }
+
   class << self
     def search(query)
       # クラス内ではレシーバを省略できる
@@ -8,5 +10,10 @@ class Member < ApplicationRecord
       end
       rel
     end
+  end
+
+  def destroy
+    self.deleted = true
+    save
   end
 end
