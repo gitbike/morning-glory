@@ -8,6 +8,11 @@ class Member < ApplicationRecord
                                      allow_blank: true },
                      uniqueness: true
 
+  validates :name, presence: true,
+                   format: { with: /\A[A-Za-z]\w*\z/, allow_blank: true },
+                   length: { minumum: 2, maximum: 20, allow_blank: true },
+                   uniqueness: { case_sensitive: false }
+
   class << self
     def search(query)
       # クラス内ではレシーバを省略できる
