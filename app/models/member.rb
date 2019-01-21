@@ -13,6 +13,8 @@ class Member < ApplicationRecord
                    length: { minumum: 2, maximum: 20, allow_blank: true },
                    uniqueness: { case_sensitive: false }
 
+  validates :full_name, length: { maximum: 20 }
+
   class << self
     def search(query)
       # クラス内ではレシーバを省略できる
