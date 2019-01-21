@@ -1,6 +1,13 @@
 class Member < ApplicationRecord
   scope :active, -> { where(deleted: false) }
 
+  validates :number, presence: true,
+                     numericality: { only_integer: true,
+                                     greater_than: 0,
+                                     less_than: 100,
+                                     allow_blank: true },
+                     uniqueness: true
+
   class << self
     def search(query)
       # クラス内ではレシーバを省略できる
