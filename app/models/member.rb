@@ -1,4 +1,6 @@
 class Member < ApplicationRecord
+  include EmailAddressChecker
+
   scope :active, -> { where(deleted: false) }
 
   validates :number, presence: true,
@@ -14,6 +16,8 @@ class Member < ApplicationRecord
                    uniqueness: { case_sensitive: false }
 
   validates :full_name, length: { maximum: 20 }
+
+  validate :check_email
 
   class << self
     def search(query)
@@ -31,3 +35,10 @@ class Member < ApplicationRecord
     save
   end
 end
+
+private
+  def check_email
+    if email.present?
+      errors.add(:email, :invalid) unless_well_formed_as_email_address(email)
+    end
+  end
