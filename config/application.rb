@@ -11,7 +11,6 @@ module Asagao
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 5.1
     config.time_zone = 'Tokyo'
-    config.i18n.default_locale = :ja
 
     # 学習のため、ストロングパラメータを無効化する(あとで必ず有効化すること)
     config.action_controller.permit_all_parameters = true
