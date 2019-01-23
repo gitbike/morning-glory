@@ -30,7 +30,7 @@
     <td><%= f.text_field :email %></td>
   </tr>
   <tr>
-    <th>管理者</th>
+    <th><%= Member.human_attribute_name(:administrator) %></th>
     <td>
       <%= f.check_box :administrator %>
       <%= f.label :administrator, '管理者' %>
