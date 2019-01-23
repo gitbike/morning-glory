@@ -1,32 +1,32 @@
 <%= render 'shared/errors', obj: @member %>
 <table class="attr">
   <tr>
-    <th><%= f.label :number, '背番号' %></th>
+    <th><%= f.label :number %></th>
     <td><%= f.text_field :number, size: 8 %></td>
   </tr>
   <tr>
-    <th><%= f.label :name, 'ユーザー名' %></th>
+    <th><%= f.label :name %></th>
     <td><%= f.text_field :name %></td>
   </tr>
   <tr>
-    <th><%= f.label :full_name, '氏名' %></th>
+    <th><%= f.label :full_name %></th>
     <td><%= f.text_field :full_name %></td>
   </tr>
   <tr>
-    <th>性別</th>
+    <th>Member.human_attribute_name(:gender) </th>
     <td><%= f.radio_button :gender, 0 %>
-        <%= f.label :gender_0, '男' %>
+        <%= f.label :gender_0 %>
         <%= f.radio_button :gender, 1 %>
-        <%= f.label :gender_1, '女' %>
+        <%= f.label :gender_1 %>
     </td>
   </tr>
   <tr>
     <%# 一つ目のドロップダウンにタグ付けするため、第2引数にforオプションを使っている %>
-    <th><%= f.label :birthday, '誕生日', for: 'member_birthday_1i' %></th>
+    <th><%= f.label :birthday, for: 'member_birthday_1i' %></th>
     <td><%= add_date_unit(f.date_select :birthday, start_year: 1940, end_year: Time.now.year, use_month_numbers: true) %></td>
   </tr>
   <tr>
-    <th><%= f.label :email, 'メールアドレス' %></th>
+    <th><%= f.label :email %></th>
     <td><%= f.text_field :email %></td>
   </tr>
   <tr>
